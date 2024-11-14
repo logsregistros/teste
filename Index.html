@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senha</title>
+    <script>
+        function gerarSenha() {
+            const data = new Date();
+            const dia = data.getDate();
+            const mes = data.getMonth() + 1; // Janeiro é 0, então adicionamos 1
+            const senhaCompleta = (dia * 100) + (mes / 9431) * 10000;
+            const senhaFormatada = senhaCompleta.toFixed(0).toString().slice(0, 4); // Obtém os primeiros 4 dígitos
+            alert("Senha gerada: " + senhaFormatada);
+        }
+    </script>
+</head>
+<body>
+    <h1>Gerador de Senha</h1>
+    <button onclick="gerarSenha()">Gerar Senha</button>
+</body>
+</html>
